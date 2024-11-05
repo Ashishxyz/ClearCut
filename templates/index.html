@@ -1,0 +1,24 @@
+<!--JAI SHRI RAM || JAI HANUMAN-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Removal App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Remove Background from Image</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload and Process</button>
+        </form>
+        {% if result_image %}
+        <h2>Result:</h2>
+        <img src="{{ result_image }}" alt="Result Image" class="result-image">
+        {% endif %}
+    </div>
+</body>
+</html>
